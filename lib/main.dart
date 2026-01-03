@@ -34,7 +34,7 @@ class _HomeState extends State<Home> {
             children: [
               Padding(
                 padding: EdgeInsets.all(15),
-                child: Image.asset(""),
+                child: Image.asset("imagens/logo.png"),
               ),
               Padding(
                 padding: EdgeInsets.all(15),
@@ -45,7 +45,6 @@ class _HomeState extends State<Home> {
                 padding: EdgeInsets.all(15),
                 child: ElevatedButton(
                     onPressed: (){
-                      
                     }, 
                     child: Text("Gerar frase")),
               ),
