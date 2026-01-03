@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 void main(){
   
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: Home(),
   )
   );
@@ -29,8 +30,6 @@ class _HomeState extends State<Home> {
      "A disciplina diária supera a motivação quando o cansaço aparece sempre",
      "Continue mesmo cansado, seu futuro agradece cada tentativa sem já s"];
 
-
-
     void gerarFrase(){
 
       int numeroAleatorio = Random().nextInt(5); // Criacao de numero aleatorio
@@ -43,7 +42,14 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Frase do Dia"),
+        title: Text(
+            "Frase do Dia",
+           style: TextStyle(
+             color: Colors.white,
+             fontWeight: FontWeight.bold,
+           ),
+        ),
+        backgroundColor: Colors.green,
       ),
       body: Center(
         child: Container(
@@ -59,17 +65,32 @@ class _HomeState extends State<Home> {
               ),
               Padding(
                 padding: EdgeInsets.all(15),
-                child: Text(_frase),
+                child: Text(
+                    _frase,
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
               ),
               Padding(
                 padding: EdgeInsets.all(15),
                 child: ElevatedButton(
                     onPressed: (){
                       gerarFrase();
-                    }, 
-                    child: Text("Gerar frase")),
+                    },
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: const Size(250, 50),
+                      //maximumSize: const Size(200,50),
+                      backgroundColor: Colors.green,
+                    ),
+                    child: Text(
+                        "Gerar frase",
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.white,
+                      ),
+                    )),
               ),
-              
             ],
           ),
         ),
