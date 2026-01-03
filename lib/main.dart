@@ -20,6 +20,41 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Frase do Dia"),
+      ),
+      body: Center(
+        child: Container(
+          decoration: BoxDecoration(
+            border: BoxBorder.all(width: 3, color: Colors.black)
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: EdgeInsets.all(15),
+                child: Image.asset(""),
+              ),
+              Padding(
+                padding: EdgeInsets.all(15),
+                child: Text("Clique no botao abaixo para gerar Frase motivacional"),
+                
+              ),
+              Padding(
+                padding: EdgeInsets.all(15),
+                child: ElevatedButton(
+                    onPressed: (){
+                      
+                    }, 
+                    child: Text("Gerar frase")),
+              ),
+              
+            ],
+          ),
+        ),
+      ),
+     
+    );
   }
 }
