@@ -1,4 +1,6 @@
 
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 
@@ -18,6 +20,15 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+   List <String> frases =[
+     "Acredite em você, mesmo quando ninguém mais acreditar",
+     "Cada pequeno esforço de hoje constrói o sucesso de amanhã",
+     "Não desista, grandes conquistas levam tempo",
+     "O progresso acontece quando você decide continuar.",
+     "Dificuldades existem para mostrar o quanto você é capaz."];
+
+   int numeroAleatorio = Random().nextInt(5);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +50,6 @@ class _HomeState extends State<Home> {
               Padding(
                 padding: EdgeInsets.all(15),
                 child: Text("Clique no botao abaixo para gerar Frase motivacional"),
-                
               ),
               Padding(
                 padding: EdgeInsets.all(15),
