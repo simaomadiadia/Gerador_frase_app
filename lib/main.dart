@@ -21,14 +21,24 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
+  String _frase ="Clique no botão abaixo para gerar frase";
    List <String> frases =[
-     "Acredite em você, mesmo quando ninguém mais acreditar",
-     "Cada pequeno esforço de hoje constrói o sucesso de amanhã",
-     "Não desista, grandes conquistas levam tempo",
-     "O progresso acontece quando você decide continuar.",
-     "Dificuldades existem para mostrar o quanto você é capaz."];
+     "Acredite em você e siga firme, pois cada esforço vale a pena sempre!!!",
+     "Persistir todos os dias transforma pequenos passos em vitórias reais!!",
+     "Não desista agora, pois a constância constrói grandes resultados sempre",
+     "A disciplina diária supera a motivação quando o cansaço aparece sempre",
+     "Continue mesmo cansado, seu futuro agradece cada tentativa sem já s"];
 
-   int numeroAleatorio = Random().nextInt(5);
+
+
+    void gerarFrase(){
+
+      int numeroAleatorio = Random().nextInt(5); // Criacao de numero aleatorio
+
+      setState(() {
+        _frase = frases[numeroAleatorio];
+      });
+    }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +48,7 @@ class _HomeState extends State<Home> {
       body: Center(
         child: Container(
           decoration: BoxDecoration(
-            border: BoxBorder.all(width: 3, color: Colors.black)
+            //border: BoxBorder.all(width: 3, color: Colors.black)
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -49,12 +59,13 @@ class _HomeState extends State<Home> {
               ),
               Padding(
                 padding: EdgeInsets.all(15),
-                child: Text("Clique no botao abaixo para gerar Frase motivacional"),
+                child: Text(_frase),
               ),
               Padding(
                 padding: EdgeInsets.all(15),
                 child: ElevatedButton(
                     onPressed: (){
+                      gerarFrase();
                     }, 
                     child: Text("Gerar frase")),
               ),
